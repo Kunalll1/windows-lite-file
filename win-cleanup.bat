@@ -510,7 +510,8 @@ cls
 
 :: reg add "HKEY_CLASSES_ROOT\Directory\shell\Open with MPV" /v icon /t REG_SZ /d "C:\\ProgramData\\chocolatey\\lib\\mpv.install\\tools\\mpv-document.ico" /f
 :: reg add "HKCR\Directory\shell\Open with MPV\command" /v @ /t REG_SZ /d "mpv \"%1\"" /f
-goto :post
+
+goto menu
 
 :: Open User preferences to configure administrator/user permissions
 :user
@@ -523,7 +524,7 @@ timeout /t 2 /nobreak > NUL
 net user administrator /active:yes
 netplwiz
 
-goto post
+goto menu
 
 :reboot
 	cls
